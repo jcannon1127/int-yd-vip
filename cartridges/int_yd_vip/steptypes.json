@@ -1,0 +1,23 @@
+{
+    "step-types": {
+        "script-module-step": [
+            {
+                "@type-id": "custom.VIPBilling",
+                "@supports-parallel-execution": false,
+                "@supports-site-context": true,
+                "@supports-organization-context": false,
+                "description": "Charges monthly VIP membership fees via Cybersource stored tokens",
+                "module": "int_yd_vip/cartridge/scripts/jobs/vipBillingJob.js",
+                "function": "execute",
+                "transactional": false,
+                "timeout-in-seconds": 3600,
+                "status-codes": {
+                    "status": [
+                        { "@code": "ERROR", "description": "Job failed" },
+                        { "@code": "OK", "description": "Job finished" }
+                    ]
+                }
+            }
+        ]
+    }
+}

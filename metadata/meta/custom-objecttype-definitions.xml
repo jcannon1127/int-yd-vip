@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <custom-type type-id="VIPBillingLedger">
+        <display-name xml:lang="x-default">VIP Billing Ledger</display-name>
+        <staging-mode>no-staging</staging-mode>
+        <storage-scope>organization</storage-scope>
+        <key-definition attribute-id="id">
+            <type>string</type>
+        </key-definition>
+        <attribute-definitions>
+            <attribute-definition attribute-id="customerNo">
+                <display-name xml:lang="x-default">Customer No</display-name>
+                <type>string</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="eventType">
+                <display-name xml:lang="x-default">Event Type</display-name>
+                <type>string</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="detail">
+                <display-name xml:lang="x-default">Detail</display-name>
+                <type>string</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="eventDate">
+                <display-name xml:lang="x-default">Event Date</display-name>
+                <type>datetime</type>
+            </attribute-definition>
+        </attribute-definitions>
+    </custom-type>
+</metadata>

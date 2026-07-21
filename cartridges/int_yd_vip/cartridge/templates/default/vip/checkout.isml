@@ -1,0 +1,20 @@
+<isdecorate template="common/layout/page">
+    <isscript>var assets = require('*/cartridge/scripts/assets.js'); assets.addCss('/css/vip.css');</isscript>
+    <div class="container vip-page">
+        <isif condition="${pdict.checkoutBody}">
+            <isprint value="${pdict.checkoutBody}" encoding="off"/>
+        <iselse/>
+            <div class="vip-card" style="text-align:center;">
+                <h1>You&rsquo;re one step away &mdash; ${pdict.tier.name} VIP</h1>
+                <p>${pdict.tier.priceLabel} &mdash; cancel online anytime.</p>
+                <p style="color:#4B5D3A;font-weight:600;">Your welcome gift: ${pdict.tier.welcomePct} off your first order with code ${pdict.tier.welcomeCode}.</p>
+            </div>
+        </isif>
+        <form action="${URLUtils.url('VIP-Process')}" method="POST" style="text-align:center;margin-top:1.5rem;">
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+            <input type="hidden" name="tier" value="${pdict.tier.id}"/>
+            <button type="submit" style="display:inline-block;background:#4B5D3A;color:#fff;padding:.7rem 2rem;border-radius:999px;border:none;font-size:1.05rem;cursor:pointer;">Confirm &amp; start my ${pdict.tier.name} membership</button>
+            <p style="font-size:.8rem;color:#999;margin-top:.8rem;">Sandbox: no payment is processed yet &mdash; card capture is added with live credentials.</p>
+        </form>
+    </div>
+</isdecorate>

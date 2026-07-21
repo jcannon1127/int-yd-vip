@@ -1,0 +1,25 @@
+<isdecorate template="common/layout/page">
+    <isscript>var assets = require('*/cartridge/scripts/assets.js'); assets.addCss('/css/vip.css');</isscript>
+    <div class="container vip-page">
+        <isif condition="${pdict.vip.isMember}">
+            <isif condition="${pdict.memberBody}">
+                <isprint value="${pdict.memberBody}" encoding="off"/>
+            <iselse/>
+                <div class="vip-card vip-card--member"><h1>${Resource.msg('vip.member.title','vip',null)}</h1><p>${Resource.msg('vip.member.body','vip',null)}</p></div>
+            </isif>
+            <div style="text-align:center;">
+                <button class="btn btn-outline-danger vip-cancel-btn" data-url="${URLUtils.url('VIP-Cancel')}">${Resource.msg('vip.cancel.button','vip',null)}</button>
+                <p class="vip-fine-print">${Resource.msg('vip.cancel.fineprint','vip',null)}</p>
+            </div>
+        <iselse/>
+            <isif condition="${pdict.joinBody}">
+                <isprint value="${pdict.joinBody}" encoding="off"/>
+            <iselse/>
+                <div class="vip-card" style="text-align:center;">
+                    <h1>Become a Yoga Democracy VIP</h1>
+                    <p><a href="${URLUtils.url('VIP-Join','tier','silver')}">Join Silver</a> &middot; <a href="${URLUtils.url('VIP-Join','tier','gold')}">Join Gold</a></p>
+                </div>
+            </isif>
+        </isif>
+    </div>
+</isdecorate>

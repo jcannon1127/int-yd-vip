@@ -1,0 +1,7 @@
+{
+    "name": "int_yd_vip",
+    "version": "0.1.0",
+    "description": "Yoga Democracy VIP membership cartridge (customer group pricing + Cybersource recurring billing)",
+    "main": "index.js",
+    "paths": { "base": "../storefront-reference-architecture/cartridges/app_storefront_base/" }
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://www.demandware.com/xml/impex/metadata/2006-10-31">
+    <type-extension type-id="Profile">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="vipTier">
+                <display-name xml:lang="x-default">VIP Tier</display-name>
+                <type>enum-of-string</type>
+                <value-definitions>
+                    <value-definition><value>silver</value></value-definition>
+                    <value-definition><value>gold</value></value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipStatus">
+                <display-name xml:lang="x-default">VIP Status</display-name>
+                <type>enum-of-string</type>
+                <value-definitions>
+                    <value-definition><value>ACTIVE</value></value-definition>
+                    <value-definition><value>PAST_DUE</value></value-definition>
+                    <value-definition><value>CANCELED</value></value-definition>
+                </value-definitions>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipMemberSince">
+                <display-name xml:lang="x-default">VIP Member Since</display-name>
+                <type>datetime</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipCanceledOn">
+                <display-name xml:lang="x-default">VIP Canceled On</display-name>
+                <type>datetime</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipLastBilledOn">
+                <display-name xml:lang="x-default">VIP Last Billed On</display-name>
+                <type>datetime</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipPaymentInstrumentId">
+                <display-name xml:lang="x-default">VIP Cybersource Token Id</display-name>
+                <type>string</type>
+            </attribute-definition>
+            <attribute-definition attribute-id="rewardsEnrolled">
+                <display-name xml:lang="x-default">Rewards Enrolled (via VIP)</display-name>
+                <type>boolean</type>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="VIP">
+                <display-name xml:lang="x-default">VIP Membership</display-name>
+                <attribute attribute-id="vipTier"/>
+                <attribute attribute-id="vipStatus"/>
+                <attribute attribute-id="vipMemberSince"/>
+                <attribute attribute-id="vipCanceledOn"/>
+                <attribute attribute-id="vipLastBilledOn"/>
+                <attribute attribute-id="vipPaymentInstrumentId"/>
+                <attribute attribute-id="rewardsEnrolled"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+    <type-extension type-id="SitePreferences">
+        <custom-attribute-definitions>
+            <attribute-definition attribute-id="vipMonthlyPrice">
+                <display-name xml:lang="x-default">VIP Monthly Price</display-name>
+                <type>double</type>
+                <default-value>12.0</default-value>
+            </attribute-definition>
+            <attribute-definition attribute-id="vipMonthlyPriceLabel">
+                <display-name xml:lang="x-default">VIP Displayed Price Label</display-name>
+                <type>string</type>
+                <default-value>$12/month</default-value>
+            </attribute-definition>
+        </custom-attribute-definitions>
+        <group-definitions>
+            <attribute-group group-id="VIP">
+                <display-name xml:lang="x-default">VIP Membership</display-name>
+                <attribute attribute-id="vipMonthlyPrice"/>
+                <attribute attribute-id="vipMonthlyPriceLabel"/>
+            </attribute-group>
+        </group-definitions>
+    </type-extension>
+</metadata>

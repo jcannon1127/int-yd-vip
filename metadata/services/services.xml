@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns="http://www.demandware.com/xml/impex/services/2014-09-26">
+    <service-credential service-credential-id="cybersource.rest.vip.cred">
+        <url>https://apitest.cybersource.com</url>
+        <!-- user/password (key id / shared secret) set manually in BM; never in source -->
+    </service-credential>
+    <service-profile service-profile-id="cybersource.rest.vip.profile">
+        <timeout-millis>30000</timeout-millis>
+        <rate-limit-millis>0</rate-limit-millis>
+        <circuit-breaker-millis>60000</circuit-breaker-millis>
+    </service-profile>
+    <service service-id="cybersource.rest.vip">
+        <service-type>HTTP</service-type>
+        <enabled>true</enabled>
+        <log-prefix>vip-cybs</log-prefix>
+        <comm-log-enabled>false</comm-log-enabled>
+        <mock-mode-enabled>true</mock-mode-enabled>
+        <profile-id>cybersource.rest.vip.profile</profile-id>
+        <credential-id>cybersource.rest.vip.cred</credential-id>
+    </service>
+</services>
